@@ -1,0 +1,57 @@
+.fundo_Header {
+    background-image: url("../img/puc_logo.png");
+    background-repeat: no-repeat;
+    height: 120px;
+}
+
+.divisao {
+    border-right: 1px solid;
+}
+
+.linha {
+    padding: 0;
+}
+
+.colunaSemPadding {
+    padding: 0 0 5 5;
+}
+
+.NomeSecaoProduto {
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.linha:hover {
+    background-color: #e4e8ec;
+}
+
+.linhaBotao {
+    margin-right: 0px;
+}
+
+span.alert_sucess {
+    color: rgb(2, 145, 2);
+}
+
+span.alert_danger {
+    color: rgb(230, 4, 4);
+}
+
+.opcoesConfirmacao {
+    margin-top: 10px;
+    display: none;
+}
+
+.dados {
+    display: none;
+}
+
+
+footer {
+    background-image: url("https://bucket.safea.grupoa.education/institution/pucrio/1669930020617_logo02.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: rgba(0, 0, 0, .87);
+    height: 110px;
+}
