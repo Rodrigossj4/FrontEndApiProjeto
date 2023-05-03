@@ -1,0 +1,7 @@
+Para o devido acesso dessa aplicação ao projeto backEnd deverão ser ajustadas 
+as 2 primeiras linhas do arquivo scripts/script.js caso o localhost utilizado não
+opere com os valores padrões.
+
+Atualmente elas possuem os valores abaixo
+var vUrlSecoes = "http://127.0.0.1:5000/Secoes";
+var vUrlProdutos = "http://127.0.0.1:5000/Produtos";
