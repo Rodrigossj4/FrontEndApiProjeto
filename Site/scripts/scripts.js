@@ -1,4 +1,4 @@
-var vUrlSecoes = "http://127.0.0.1:5000/Secoes";
+var vUrlSecoes = "http://127.0.0.1:5000/Secao";
 var vUrlProdutos = "http://127.0.0.1:5000/Produtos";
 
 $(document).ready(function (e) {

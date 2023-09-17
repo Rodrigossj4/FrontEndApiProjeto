@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  proxy:
+    image: cadastro
+    build:
+      context: .
+    ports:
+      - "3000:80"
+    networks:
+      - Admin
+
+networks: 
+  Admin:
+    driver: bridge
+    external: false
+    name: Admin
