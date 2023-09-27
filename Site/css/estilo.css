@@ -5,7 +5,7 @@
 }
 
 .divisao {
-    border-right: 0px solid;
+    border-bottom: 1px solid;
 }
 
 .linha {
@@ -47,6 +47,23 @@ span.alert_danger {
     display: none;
 }
 
+.espaco {
+    margin-top: 10px;
+}
+
+.linkCliente {
+    font-style: normal;
+    color: #0d0d0d;
+    text-decoration: none;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 15px;
+}
+
+.margens {
+    padding: 0 0 0 0;
+
+}
 
 footer {
     background-image: url("https://bucket.safea.grupoa.education/institution/pucrio/1669930020617_logo02.png");

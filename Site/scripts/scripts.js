@@ -245,6 +245,74 @@ $('#btnCadProduto').on('click', function (e) {
     }
     );
 });
+//btnFiltroProduto
+
+$('#btnFiltroSecao').on('click', function (e) {
+
+    if (($("#formFiltrarSecao #nomeSecaoFiltro").val() == "") || ($("#formFiltrarSecao #nomeSecaoFiltro").val().length <= 3)) {
+        alertas('O nome da seção precisa ter mais de 3 caractéres', '#modFiltroSecao', 'alert_danger');
+        return;
+    }
+
+    var vData = {
+        nome: $("#formFiltrarSecao #nomeSecaoFiltro").val(),
+        id: 0
+    };
+
+    $.ajax({
+        url: "http://localhost:5000/BuscarSecao",
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(vData),
+        success: function (d) {
+            var sel = $("#Secoes");
+            sel.empty();
+            d['Secoes'].forEach(e => {
+                sel.append('<div class="container"><div class="row linha"><div class="row colunaSemPadding"><span class="NomeSecaoProduto">' + e.nome + '</span></div><div class="row"><div class="col colunaSemPadding"><button class="btn btn-warning btnAlterarSecao linhaBotao" data-bs-toggle="modal" data-bs-target="#AlteraSecao" id="Alterar" data-id="' + e.id + '" data-nome="' + e.nome + '">Alterar</button></div><div class="col colunaSemPadding"><button class="btn btn-danger btnExcluirSecao linhaBotao" data-bs-toggle="modal" data-bs-target="#ExcluirSecao" data-id="' + e.id + '">Excluir</button></div></div><div class="row dados" id="dadosSecao_' + e.id + '"><span>dados</span></div></div></div>')
+
+            });
+        },
+        error: function () {
+            console.log("Ocorreu um erro: " + dataType);
+        }
+    }
+    );
+});
+
+$('#btnFiltroProduto').on('click', function (e) {
+    console.log("sdsdsds");
+    if (($("#formFiltraProduto #nomeProdutoFiltro").val() == "") || ($("#formFiltraProduto #nomeProdutoFiltro").val().length <= 3)) {
+        alertas('O nome do produto precisa ter mais de 3 caractéres', '#modFiltraProduto', 'alert_danger');
+        return;
+    }
+
+    var vData = {
+        nome: $("#formFiltraProduto #nomeProdutoFiltro").val(),
+        id: 0,
+        idSecao: 0,
+        preco: 0
+    };
+
+    $.ajax({
+        url: "http://localhost:5000/BuscaProdutos",
+        type: 'POST',
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(vData),
+        success: function (d) {
+            var sel = $("#Produtos");
+            sel.empty();
+            d['Produtos'].forEach(e => {
+                sel.append('<div class="container"><div class="row linha"><div class="col colunaSemPadding"><span class="NomeSecaoProduto">' + e.nome + '</span></div><div class="row"><div class="col colunaSemPadding"><button class="btn btn-warning btnAlterarProduto linhaBotao" data-bs-toggle="modal" data-bs-target="#AlteraProduto" id="Alterar" data-id="' + e.id + '" data-nome="' + e.nome + '" data-secao="' + e.idSecao + '" data-preco="' + e.preco + '">Alterar</button></div><div class="col colunaSemPadding"><button class="btn btn-danger btnExcluirProduto linhaBotao" data-bs-toggle="modal" data-bs-target="#ExcluirProduto" data-id="' + e.id + '">Excluir</button></div></div><div class="row dados" id="dadosProduto_' + e.id + '"><span>dados</span></div></div></div>')
+            });
+        },
+        error: function () {
+            console.log("Ocorreu um erro: " + dataType);
+        }
+    }
+    );
+});
 
 $(document).on('click', '.btnAlterarProduto', function (e) {
     $('#formAltProduto #nomeProduto').val($(this).data("nome"));

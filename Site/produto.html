@@ -7,6 +7,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </header>
 
 <body>
@@ -15,9 +16,17 @@
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fundo_Header">
 
             </header>
-            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                    <a class="navbar-brand" href="secao.html">Secao</a>
+                    <a class="navbar-brand" href="produto.html">Produtos</a>
+                    <a class="navbar-brand" href="cliente.html">Cliente</a>
+                </div>
+            </nav>
+            <div class="container espaco">
                 <div class="p-5 bg-body-tertiary rounded-3 row">
-                    <div class="col" id="modCadProduto">
+                    <div class="col divisao" id="modCadProduto">
                         <h3>Cadastro de Produtos</h3>
                         <form method="post" id="formCadProduto">
                             <div class="form-group">
@@ -48,6 +57,24 @@
                 </div>
             </div>
             <div class="Container">
+                <div class="p-5 bg-body-tertiary rounded-3 row">
+                    <div class="col divisao" id="modFiltraProduto">
+                        <h3>Filtar de Produtos</h3>
+                        <form method="post" id="formFiltraProduto">
+                            <div class="form-group">
+                                <label class="col-form-label">Nome do Produto: </label>
+                                <input type="text" class="form-control form-control-sm" name="nomeProdutoFiltro"
+                                    id="nomeProdutoFiltro">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="button" class="btn btn-primary" id="btnFiltroProduto" value="Filtrar">
+                                </div>
+                            </div>
+                        </form>
+                        <span class="alerta"></span>
+                    </div>
+                </div>
                 <div class="p-5 bg-body-tertiary rounded-3 row">
                     <div class="col">
                         <h3>Gerenciamento de Produto</h3>

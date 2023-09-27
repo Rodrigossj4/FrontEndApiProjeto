@@ -7,6 +7,7 @@
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </header>
 
 <body>
@@ -15,7 +16,15 @@
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom fundo_Header">
 
             </header>
-            <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html">Home</a>
+                    <a class="navbar-brand" href="secao.html">Secao</a>
+                    <a class="navbar-brand" href="produto.html">Produtos</a>
+                    <a class="navbar-brand" href="cliente.html">Cliente</a>
+                </div>
+            </nav>
+            <div class="container espaco">
                 <div class="p-5 bg-body-tertiary rounded-3 row">
                     <div class="col divisao" id="modCadCliente">
                         <h3>Cadastro de Cliente</h3>
@@ -42,6 +51,25 @@
             </div>
             <div class="Container">
                 <div class="p-5 bg-body-tertiary rounded-3 row">
+                    <div class="col divisao" id="modfiltraCliente">
+                        <h3>Busca</h3>
+                        <form method="post" id="formFiltraCliente">
+                            <div class="form-group">
+                                <label class="col-form-label" for="clienteFiltro">Nome do Cliente: </label>
+                                <input class="form-control form-control-sm" type="text" name="clienteFiltro"
+                                    id="clienteFiltro">
+                            </div>
+                            <br>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <input type="button" id="btnFiltroCliente" value="Buscar" class="btn btn-primary">
+                                </div>
+                            </div>
+                        </form>
+                        <span class="alerta"></span>
+                    </div>
+                </div>
+                <div class="p-5 bg-body-tertiary rounded-3 row">
                     <div class="col divisao">
                         <h3>Gerenciamento de Cliente</h3>
                         <div id="Clientes">
@@ -56,126 +84,11 @@
         </main>
     </div>
 
-    <div class="modal fade" id="AlteraCliente" tabindex="-1" aria-labelledby="AlteraCliente" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Alterar dados da secao</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" id="formAltCliente">
-                        <div class="form-group">
-                            <label class="col-form-label" for="nomeCliente">Nome do Cliente: </label>
-                            <input type="hidden" name="id" id="id">
-                            <input class="form-control form-control-sm" type="text" name="nomeCliente" id="nomeCliente">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-form-label" for="documentoCliente">Documento do Cliente: </label>
-                            <input class="form-control form-control-sm" type="text" name="documentoCliente"
-                                id="documentoCliente">
-                        </div>
-                        <br>
-                        <div class="form-group row">
-                            <div class="col-sm-3">
-                                <input type="button" id="exibConfirmaAlteracaoCliente" value="Alterar"
-                                    class="btn btn-primary">
-                            </div>
-                        </div>
-                        <div class="form-group row opcoesConfirmacao">
-                            <span>Deseja realmente alterar essas informações?</span>
-                            <div class="col-sm-3">
-                                <input type="button" id="btnConfirmaAlteracaoCliente" value="Sim"
-                                    class="btn btn-success">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="button" id="btnNaoConfirmaAlteracaoCliente" value="Não"
-                                    class="btn btn-danger">
-                            </div>
-                        </div>
-                    </form>
-                    <span class="alerta"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="CadastrarEnderecoCliente" tabindex="-1" aria-labelledby="CadastrarEnderecoCliente"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Alterar dados da secao</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" id="formCadEndCliente">
-                        <div class="form-group">
-                            <label class="col-form-label" for="nomeCliente">Nome do Cliente: </label>
-                            <input type="hidden" name="id" id="id">
-                            <input class="form-control form-control-sm" type="text" name="nomeCliente" id="nomeCliente">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label class="col-form-label" for="documentoCliente">Documento do Cliente: </label>
-                            <input class="form-control form-control-sm" type="text" name="documentoCliente"
-                                id="documentoCliente">
-                        </div>
-                        <br>
-                        <div class="form-group row">
-                            <div class="col-sm-3">
-                                <input type="button" id="exibConfirmaAlteracaoCliente" value="Alterar"
-                                    class="btn btn-primary">
-                            </div>
-                        </div>
-                        <div class="form-group row opcoesConfirmacao">
-                            <span>Deseja realmente alterar essas informações?</span>
-                            <div class="col-sm-3">
-                                <input type="button" id="btnConfirmaAlteracaoCliente" value="Sim"
-                                    class="btn btn-success">
-                            </div>
-                            <div class="col-sm-3">
-                                <input type="button" id="btnNaoConfirmaAlteracaoCliente" value="Não"
-                                    class="btn btn-danger">
-                            </div>
-                        </div>
-                    </form>
-                    <span class="alerta"></span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="modal fade" id="ExcluirCliente" tabindex="-1" aria-labelledby="ExcluirCliente" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group row">
-                        <span>Deseja realmente excluir esse Cliente?</span>
-                        <div class="col-sm-3">
-                            <input type="hidden" name="id" id="id">
-                            <input type="button" id="btnConfirmaExcluirCliente" data-id="" value="Sim"
-                                class="btn btn-success btnConfirmaExcluirCliente">
-                        </div>
-                        <div class="col-sm-3">
-                            <input type="button" id="btnNaoConfirmaExcluirCliente" data-id="" value="Não"
-                                class="btn btn-danger btnNaoConfirmaExcluirCliente">
-                        </div>
-                    </div>
-                    <span class="alerta"></span>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
     crossorigin="anonymous"></script>
 <!--<script src="scripts/jquery.js"></script>-->
 <script src="scripts/scripts_cliente.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.0/jquery.mask.js"></script>
 
 </html>
